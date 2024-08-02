@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="slider" id="slider">
+
+    <div class="slides" id="slides">
+      <div class="slide">
+        <img clas="slide" draggable="false" src="img/1.jpg" />
+      </div>
+      <div class="slide">
+        <img clas="slide" draggable="false" src="img/2.jpg" />
+      </div>
+      <div class="slide">
+        <img clas="slide" draggable="false" src="img/3.jpg" />
+      </div>
+      <div class="slide">
+        <img clas="slide" draggable="false" src="img/4.jpg" />
+      </div>
+
+    </div>
+
+    <div class="controls">
+      <a class="prev" id="prev">&#10094</a>
+      <a class="next" id="next">&#10095</a>
+    </div>
+    
+    <div class="indicators" id="indicators">
+      <div class="indicator" data-slide="0"></div>
+      <div class="indicator" data-slide="1"></div>
+      <div class="indicator" data-slide="2"></div>
+      <div class="indicator" data-slide="3"></div>
+    </div>
+    
+    <button class="control" id="toggle">Pause</button>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
