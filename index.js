@@ -41,11 +41,16 @@ document.addEventListener('keydown', (e) => {
 
 let touchStartX = 0;
 let touchEndX = 0;
+let isDragging = false;
 
 slides.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
     console.log(touchStartX);
-    
+  
+});
+
+slides.addEventListener('touchmove', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
 });
 
 slides.addEventListener('touchend', (e) => {
@@ -55,11 +60,27 @@ slides.addEventListener('touchend', (e) => {
 
 slides.addEventListener('mousedown', (e) => {
     touchStartX = e.clientX;
+    isDragging = true;
 });
 
-slides.addEventListener('mouseup', (e) => {
-    touchEndX = e.clientX;
-    handleGesture();
+slides.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+      touchEndX = e.clientX;
+  }
+});
+
+slides.addEventListener('mouseup', () => {
+  if (isDragging) {
+      handleGesture();
+      isDragging = false;
+  }
+});
+
+slides.addEventListener('mouseleave', () => {
+  if (isDragging) {
+      handleGesture();
+      isDragging = false;
+  }
 });
 
 function handleGesture() {
