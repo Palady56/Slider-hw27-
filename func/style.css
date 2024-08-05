@@ -65,6 +65,10 @@ body {
   cursor: pointer;
 }
 
+.control:hover {
+  background-color: rgba(46, 44, 44, 0.5);
+}
+
 .indicators {
   position: absolute;
   bottom: 10px;
